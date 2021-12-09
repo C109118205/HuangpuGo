@@ -1,4 +1,4 @@
-{% load static %}
+<!---{% load static %}-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,8 +21,38 @@
     <button id='fitBounds-btn'>回到黃埔新村</button>
   </div> 
   <div id="map"></div>
+
+ 
   
-  <script src="{% static 'map.js' %}"></script>
-  
+
+  <script type="text/javascript">
+    let map = L.map('map').setView([
+        22.618794358690458, // latitude(緯度)
+        120.36315781103444 // longitude(經度)
+      ], 18 // zoom(地圖的縮放，值越大->放大；反之縮小)
+    );
+        
+    // 呼叫函式來新增 (可以搭配 CSS來設計樣式)
+ 
+    //  定義tileLayer(圖磚)，目前使用為 openstreetmap的底圖(也可以選擇其他底圖)
+    let osm_tileLayer =  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    maxZoom: 20,
+    attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+document.getElementById("fitBounds-btn").addEventListener("click", function () {
+  map.fitBounds([
+    [22.61845121771776, 120.36157807451778],
+    [22.617700274719702, 120.3661117505427]
+  ]);
+});
+
+
+{% for data in datas%}
+  let store{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}])
+  store{{data.id}}.addTo(map);
+  store{{data.id}}.bindPopup("{{data.name}}")
+{% endfor %}
+
+</script>
 </body>
 </html>
