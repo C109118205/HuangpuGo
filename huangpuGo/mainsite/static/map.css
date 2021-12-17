@@ -32,3 +32,24 @@ html, body {
   background: #f0932b;
   color: #fff;
 }
+
+  /* SIDEBAR OVERRIDES*/
+  .leaflet-sidebar-tabs {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+  
+  .leaflet-sidebar-header {
+    background-color: rgba(0, 116, 217, 0.95) !important;
+  }
+  
+  .leaflet-sidebar-content {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+  
+  #sidebar > div.leaflet-sidebar-tabs > ul > li > a {
+    color: white !important;
+  }
+  
+  #sidebar > div.leaflet-sidebar-tabs > ul > li:not(.disabled):not(.active) > a:hover {
+    color: black !important;
+  }
