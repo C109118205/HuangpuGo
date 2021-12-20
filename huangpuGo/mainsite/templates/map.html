@@ -4,21 +4,15 @@
 <head>
   <title>HuangpuGo</title>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="{% static '/L.Control.Sidebar.css'%}" />
-  <link rel="stylesheet" href="{% static '/L.Control.Sidebar.css' %}" />
-
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" type="text/css" href="{% static '/map.css' %}">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
   crossorigin=""/>
+  <link rel="stylesheet" href="{% static '/css/leaflet-sidebar.css' %}" />
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
 </head>
 <body>
   <div class='button-group'>
@@ -26,15 +20,73 @@
   </div> 
   
 
-  
-  <div id="map"></div>
   <div id="sidebar" class="leaflet-sidebar collapsed">
-    
+
+    <!-- nav tabs -->
+    <div class="leaflet-sidebar-tabs">
+        <!-- top aligned tabs -->
+        <ul role="tablist">
+            <li><a href="#home" role="tab"><i class="fa fa-bars active"></i></a></li>
+            <li><a href="#autopan" role="tab"><i class="fa fa-arrows"></i></a></li>
+        </ul>       
+    </div>
+
+    <!-- panel content -->
+    <div class="leaflet-sidebar-content">
+        <div class="leaflet-sidebar-pane" id="home">
+            <h1 class="leaflet-sidebar-header">
+                HuangpuGo
+                <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+            </h1>
+
+            <p>A responsive sidebar for the mapping library <a href="https://leafletjs.com/">Leaflet</a>.</p>
+            <p>Compatible with version 0.7 and 1.x (tested up to 1.6.0)</p>
+            <p><b>Select the other panes for a showcase of each feature.</b></p>
+
+            <h2>More examples</h2>
+            <ul>
+                <li><a href="./position-right.html">Right aligned</a></li>
+                <li><a href="./halfheight.html">The sidebar adapts to map container size</a></li>
+                <li><a href="./leaflet-latest.html">Proof that it works with the latest leaflet version (if not, please report it!)</a></li>
+                <li><a href="./leaflet-0.7.html">Proof that it works with leaflet 0.7</a></li>
+            </ul>
+
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="leaflet-sidebar-pane" id="autopan">
+            <h1 class="leaflet-sidebar-header">
+                autopan
+                <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+            </h1>
+            <p>
+                <code>Leaflet.control.sidebar({ autopan: true })</code>
+                makes shure that the map center always stays visible.
+            </p>
+            <p>
+                The autopan behviour is responsive as well.
+                Try opening and closing the sidebar from this pane!
+            </p>
+        </div>
+
+        <div class="leaflet-sidebar-pane" id="messages">
+            <h1 class="leaflet-sidebar-header">Messages<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+        </div>
+    </div>
+</div>
+
+
+
+  <div id="map" ></div>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  crossorigin=""></script>
   </div>
   
-  
-<script src="{% static "/L.Control.Sidebar.js"%}"></script>
-  
+  <script src="{% static "/js/leaflet-sidebar.js"%}"></script>
+
 
   <script type="text/javascript">
 
@@ -59,7 +111,23 @@ document.getElementById("fitBounds-btn").addEventListener("click", function () {
 });
 
 var room = new L.Icon({
-  iconUrl: '{% static "img/home.png"%}',
+  iconUrl: '{% static "img/Homestay.png"%}',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+   iconSize: [60, 60],
+   iconAnchor: [50, 50],
+   popupAnchor: [1, -34],
+   shadowSize: [41, 41]
+});
+var food = new L.Icon({
+  iconUrl: '{% static "img/restaurant.png"%}',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+   iconSize: [60, 60],
+   iconAnchor: [50, 50],
+   popupAnchor: [1, -34],
+   shadowSize: [41, 41]
+});
+var hand = new L.Icon({
+  iconUrl: '{% static "img/Homemade.png"%}',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
    iconSize: [60, 60],
    iconAnchor: [50, 50],
@@ -67,9 +135,9 @@ var room = new L.Icon({
    shadowSize: [41, 41]
 });
 
-
-//<a href='https://pngtree.com/so/facebook'>facebook png from pngtree.com/</a>
+  //民宿
 {% for data in datas%}
+{% if data.type == "民宿"%}
 
   var roomPopup{{data.id}}='<h2>{{ data.name }}</h2>\
   <br>{{data.note}}</br>\
@@ -100,38 +168,115 @@ var room = new L.Icon({
   var room{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}],{icon:room})
   .addTo(map)
   .bindPopup(roomPopup{{data.id}});
+  {% endif %}
 
+  //美食
+  {% if data.type == "美食"%}
+  var foodPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  <br>{{data.note}}</br>\
+  <br>社群媒體</br> \
+  {% if data.FBLink != None and data.IGLink == None and data.OtherLink == None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink != None and data.OtherLink == None%} \
+  <a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink == None and data.OtherLink != None%} \
+  <a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink != None and data.OtherLink == None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink != None and data.OtherLink != None%} \
+  <a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink == None and data.OtherLink != None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink != None and data.OtherLink != None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+    ';
+
+  var food{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}],{icon:food})
+  .addTo(map)
+  .bindPopup(foodPopup{{data.id}});
+  {% endif %}
+
+  //手作
+  {% if data.type == "手作"%}
+  var handPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  <br>{{data.note}}</br>\
+  <br>社群媒體</br> \
+  {% if data.FBLink != None and data.IGLink == None and data.OtherLink == None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink != None and data.OtherLink == None%} \
+  <a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink == None and data.OtherLink != None%} \
+  <a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink != None and data.OtherLink == None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink != None and data.OtherLink != None%} \
+  <a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink == None and data.OtherLink != None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink != None and data.OtherLink != None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a><a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+    ';
+
+  var hand{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}],{icon:hand})
+  .addTo(map)
+  .bindPopup(handPopup{{data.id}});
+  {% endif %}
   {% endfor %}
 
-//   map.locate({setView: true, maxZoom: 16});
-//   function onLocationFound(e) {
-//     var radius = e.accuracy;
+  let roomgroup = L.layerGroup([{% for data in datas%}{% if data.type == "民宿"%}room{{data.id}},{% endif %}{% endfor %}]).addTo(map);
+  let foodgroup = L.layerGroup([{% for data in datas%}{% if data.type == "美食"%}food{{data.id}},{% endif %}{% endfor %}]).addTo(map);
+  let handgroup = L.layerGroup([{% for data in datas%}{% if data.type == "手作"%}hand{{data.id}},{% endif %}{% endfor %}]).addTo(map);
 
-//     L.marker(e.latlng).addTo(map)
-//         .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-//     L.circle(e.latlng, radius).addTo(map);
-// }
-
-// map.on('locationfound', onLocationFound);
-// function onLocationError(e) {
-//     alert(e.message);
-// }
-
-// map.on('locationerror', onLocationError);
 </script>
 
 
 <script>
-  var sidebar = L.control.sidebar('sidebar', {
-    position: 'left'
-   });
 
-  map.addControl(sidebar);
-      setTimeout(function () {
-      sidebar.show();
-  },);
+  var sidebar = L.control.sidebar({ container: 'sidebar' })
+            .addTo(map)
+            .open('home');
 
+        // add panels dynamically to the sidebar
+        sidebar
+            .addPanel({
+                id:   'js-api',
+                tab:  '<i class="fa fa-gear"></i>',
+                title: 'JS API',
+                pane: '<p>The Javascript API allows to dynamically create or modify the panel state.<p/><p><button onclick="sidebar.enablePanel(\'mail\')">enable mails panel</button><button onclick="sidebar.disablePanel(\'mail\')">disable mails panel</button></p><p><button onclick="addUser()">add user</button></b>',
+            })
+            // add a tab with a click callback, initially disabled
+            .addPanel({
+                id:   'mail',
+                tab:  '<i class="fa fa-envelope"></i>',
+                title: 'Messages',
+                button: function() { alert('opened via JS callback') },
+                disabled: true,
+            })
+
+        // be notified when a panel is opened
+        sidebar.on('content', function (ev) {
+            switch (ev.id) {
+                case 'autopan':
+                sidebar.options.autopan = true;
+                break;
+                default:
+                sidebar.options.autopan = false;
+            }
+        });
   
 </script>
 </body>
