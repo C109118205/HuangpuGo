@@ -35,7 +35,6 @@
             <li><a href="#food" role="tab"><i class="fa fa-cutlery"></i></a></li>
             <li><a href="#hand" role="tab"><i class="fa fa-scissors"></i></a></li>
             <li><a href="#shopping" role="tab"><i class="fa fa-shopping-cart"></i></a></li>
-
         </ul>       
     </div>
 
@@ -47,10 +46,51 @@
                 <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
             </h1>
             {% for data in datas%}
+            {% if data.type == "民宿" %}
             <p> </p>
-            <div class="alert alert-secondary" role="alert" style="width:350px;height:70px">
-              <img src={% static '/img/OtherLink.png'%} style="width:40px;height:40px;"><nobr>  &nbsp;{{ data.name }}</nobr>
+            <div class="card text-white bg-dark mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
             </div>
+
+            {% endif %}
+            {% if data.type == "美食" %}
+            <p> </p>
+            <div class="card text-white bg-info mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            {% endif %}
+            {% if data.type == "手作" %}
+            <p> </p>
+            <div class="card text-white bg-success mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            {% endif %}
+            {% if data.type == "商店" %}
+            <p> </p>
+            <div class="card text-white bg-secondary mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            {% endif %}
             {% endfor %}
             
         </div>
@@ -62,8 +102,13 @@
           {% for data in datas%}
             {% if data.type == "民宿" %}
             <p> </p>
-            <div class="alert alert-secondary" role="alert" style="width:350px;height:70px">
-              <img src={% static '/img/OtherLink.png'%} style="width:40px;height:40px;"><nobr>  &nbsp;{{ data.name }}</nobr>
+            <div class="card text-white bg-dark mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
             </div>
             {% endif %}
           {% endfor %}
@@ -77,8 +122,13 @@
           {% for data in datas%}
             {% if data.type == "美食" %}
             <p> </p>
-            <div class="alert alert-secondary" role="alert" style="width:350px;height:70px">
-              <img src={% static '/img/OtherLink.png'%} style="width:40px;height:40px;"><nobr>  &nbsp;{{ data.name }}</nobr>
+            <div class="card text-white bg-info mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
             </div>
             {% endif %}
           {% endfor %}    
@@ -91,8 +141,13 @@
           {% for data in datas%}
             {% if data.type == "手作" %}
             <p> </p>
-            <div class="alert alert-secondary" role="alert" style="width:350px;height:70px">
-              <img src={% static '/img/OtherLink.png'%} style="width:40px;height:40px;"><nobr>  &nbsp;{{ data.name }}</nobr>
+            <div class="card text-white bg-success mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
             </div>
             {% endif %}
           {% endfor %}    
@@ -105,9 +160,14 @@
         {% for data in datas%}
           {% if data.type == "商店" %}
           <p> </p>
-          <div class="alert alert-secondary" role="alert" style="width:350px;height:70px">
-            <img src={% static '/img/OtherLink.png'%} style="width:40px;height:40px;"><nobr>  &nbsp;{{ data.name }}</nobr>
-          </div>
+            <div class="card text-white bg-secondary mb-3">
+              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.note }}</p>
+                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
           {% endif %}
         {% endfor %}    
         </div>
@@ -144,6 +204,8 @@
     maxZoom: 20,
     attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+//使用者定位
 L.control.locate().addTo(map);
 
 document.getElementById("fitBounds-btn").addEventListener("click", function () {
@@ -259,11 +321,37 @@ var shop = new L.Icon({
   var hand{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}],{icon:hand})
   .bindPopup(handPopup{{data.id}});
   {% endif %}  
+
+  //商店
+  {% if data.type == "商店"%}
+  var shopPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  <br>{{data.note}}</br>\
+  <br>社群媒體</br> \
+  {% if data.FBLink != None and data.IGLink == None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink == None and data.IGLink != None%} \
+  <a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.FBLink != None and data.IGLink != None%} \
+  <a href="{{ data.FBLink }}"><img src="{% static "img/FB.png"%}" style="width:25px;height:25px;"><nobr>&nbsp</nobr></a><a href="{{ data.IGLink }}"><img src="{% static "img/IG.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+  {% if data.OtherLink != None%} \
+  <br>官方網站</br>\
+  <a href="{{ data.OtherLink }}"><img src="{% static "img/OtherLink.png"%}" style="width:25px;height:25px;"></a> \
+  {% endif %}\
+    ';
+
+  var shop{{data.id}} = L.marker([{{data.lat}}, {{data.lon}}],{icon:hand})
+  .bindPopup(shopPopup{{data.id}});
+  {% endif %}  
   {% endfor %}
 
   let roomgroup = L.layerGroup([{% for data in datas%}{% if data.type == "民宿"%}room{{data.id}},{% endif %}{% endfor %}]);
   let foodgroup = L.layerGroup([{% for data in datas%}{% if data.type == "美食"%}food{{data.id}},{% endif %}{% endfor %}]);
   let handgroup = L.layerGroup([{% for data in datas%}{% if data.type == "手作"%}hand{{data.id}},{% endif %}{% endfor %}]);
+  let shopgroup = L.layerGroup([{% for data in datas%}{% if data.type == "商店"%}hand{{data.id}},{% endif %}{% endfor %}]);
+
 </script>
 
 <script>
@@ -296,35 +384,39 @@ var shop = new L.Icon({
               case 'home':
               map.addLayer(roomgroup);
               map.addLayer(foodgroup);
-              map.addLayer(handgroup);    
+              map.addLayer(handgroup); 
+              map.addLayer(shopgroup);       
               break;
 
               case 'hotel':
               map.addLayer(roomgroup);
               map.removeLayer(foodgroup);
-              map.removeLayer(handgroup); 
-
+              map.removeLayer(handgroup);
+              map.removeLayer(shopgroup);       
               break;
 
               case 'food':
               map.removeLayer(roomgroup);
               map.addLayer(foodgroup);
               map.removeLayer(handgroup); 
-
+              map.removeLayer(shopgroup);       
               break;
 
               case 'hand':
               map.removeLayer(roomgroup);
               map.removeLayer(foodgroup);
               map.addLayer(handgroup); 
-
+              map.removeLayer(shopgroup);
               break;
-
-              // case 'shopping':
-              //   alert('shopping')               
-              // break;  
               
-                default:
+              case 'shopping':
+              map.removeLayer(roomgroup);
+              map.removeLayer(foodgroup);
+              map.removeLayer(handgroup); 
+              map.addLayer(shopgroup);
+              break;
+   
+              default:
                 sidebar.options.autopan = true;
             }
         });
