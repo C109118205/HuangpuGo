@@ -30,7 +30,7 @@
     <div class="leaflet-sidebar-tabs">
         <!-- top aligned tabs -->
         <ul role="tablist">
-            <li ><a href="#home" role="tab"><i class="fa fa-bars active"></i></a></li>
+            <li><a href="#home" role="tab"><i class="fa fa-bars active"></i></a></li>
             <li><a href="#hotel" role="tab"><i class="fa fa-home fa-fw"></i></a></li>
             <li><a href="#food" role="tab"><i class="fa fa-cutlery"></i></a></li>
             <li><a href="#hand" role="tab"><i class="fa fa-scissors"></i></a></li>
@@ -49,11 +49,11 @@
             {% if data.type == "民宿" %}
             <p> </p>
             <div class="card text-white bg-dark mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
 
@@ -61,33 +61,33 @@
             {% if data.type == "美食" %}
             <p> </p>
             <div class="card text-white bg-info mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
             {% if data.type == "手作" %}
             <p> </p>
             <div class="card text-white bg-success mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
             {% if data.type == "商店" %}
             <p> </p>
             <div class="card text-white bg-secondary mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
@@ -103,11 +103,11 @@
             {% if data.type == "民宿" %}
             <p> </p>
             <div class="card text-white bg-dark mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
@@ -123,11 +123,11 @@
             {% if data.type == "美食" %}
             <p> </p>
             <div class="card text-white bg-info mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{ data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
@@ -142,11 +142,11 @@
             {% if data.type == "手作" %}
             <p> </p>
             <div class="card text-white bg-success mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
             {% endif %}
@@ -161,11 +161,11 @@
           {% if data.type == "商店" %}
           <p> </p>
             <div class="card text-white bg-secondary mb-3">
-              <img class="card-img-top" src="{% static '/img/testpicture.jpg'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{data.Picture1}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ data.name }}</h5>
                 <p class="card-text">{{ data.note }}</p>
-                <p class="card-text"><small class="text">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text"><br style="line-height:32px">連絡電話: {{data.phone_number}}</br>地址: {{data.address}}</small></p>
               </div>
             </div>
           {% endif %}
@@ -186,6 +186,7 @@
 
   </div>
   
+  <script src="{% static "/js/leaflet-ant-path.js"%}"></script>
   <script src="{% static "/js/leaflet-sidebar.js"%}"></script>
 
 
@@ -252,7 +253,14 @@ var shop = new L.Icon({
 {% for data in datas%}
 {% if data.type == "民宿"%}
 
-  var roomPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  var roomPopup{{data.id}}='\
+  \
+  {% if data.Logo != None %}\
+  <h2><img src="{{ data.Logo }}" style="width:40px;height:40px;"><nobr>&nbsp</nobr>{{ data.name }}</h2>\
+  {% endif %}\
+  {% if data.Logo == None %}\
+  {{ data.name }}\
+  {% endif %}\
   <br>{{data.note}}</br>\
   <br>社群媒體</br> \
   {% if data.FBLink != None and data.IGLink == None%} \
@@ -276,7 +284,13 @@ var shop = new L.Icon({
 
   //美食
   {% if data.type == "美食"%}
-  var foodPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  var foodPopup{{data.id}}='\
+  {% if data.Logo != None %}\
+  <h2><img src="{{ data.Logo }}" style="width:40px;height:40px;"><nobr>&nbsp</nobr>{{ data.name }}</h2>\
+  {% endif %}\
+  {% if data.Logo == None %}\
+  {{ data.name }}\
+  {% endif %}\
   <br>{{data.note}}</br>\
   <br>社群媒體</br> \
   {% if data.FBLink != None and data.IGLink == None%} \
@@ -300,7 +314,13 @@ var shop = new L.Icon({
 
   //手作
   {% if data.type == "手作"%}
-  var handPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  var handPopup{{data.id}}='\
+  {% if data.Logo != None %}\
+  <h2><img src="{{ data.Logo }}" style="width:40px;height:40px;"><nobr>&nbsp</nobr>{{ data.name }}</h2>\
+  {% endif %}\
+  {% if data.Logo == None %}\
+  {{ data.name }}\
+  {% endif %}\
   <br>{{data.note}}</br>\
   <br>社群媒體</br> \
   {% if data.FBLink != None and data.IGLink == None%} \
@@ -324,7 +344,13 @@ var shop = new L.Icon({
 
   //商店
   {% if data.type == "商店"%}
-  var shopPopup{{data.id}}='<h2>{{ data.name }}</h2>\
+  var shopPopup{{data.id}}='\
+  {% if data.Logo != None %}\
+  <h2><img src="{{ data.Logo }}" style="width:40px;height:40px;"><nobr>&nbsp</nobr>{{ data.name }}</h2>\
+  {% endif %}\
+  {% if data.Logo == None %}\
+  {{ data.name }}\
+  {% endif %}\
   <br>{{data.note}}</br>\
   <br>社群媒體</br> \
   {% if data.FBLink != None and data.IGLink == None%} \
@@ -351,6 +377,8 @@ var shop = new L.Icon({
   let foodgroup = L.layerGroup([{% for data in datas%}{% if data.type == "美食"%}food{{data.id}},{% endif %}{% endfor %}]);
   let handgroup = L.layerGroup([{% for data in datas%}{% if data.type == "手作"%}hand{{data.id}},{% endif %}{% endfor %}]);
   let shopgroup = L.layerGroup([{% for data in datas%}{% if data.type == "商店"%}hand{{data.id}},{% endif %}{% endfor %}]);
+
+
 
 </script>
 
